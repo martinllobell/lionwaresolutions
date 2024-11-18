@@ -1,0 +1,44 @@
+---
+	import video from '../assets/Animation.mp4';
+import {HERO_SECTION} from '../data/constants'
+---
+
+<section id="hero" class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14">
+	<div class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10">
+	  <h1 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
+		Welcome to
+		<span class="poppins text-primary">Lionware</span> <br />
+		<span class="poppins text-primary">Solutions</span>
+		Your IT Partner
+	  </h1>
+	  <p class="text-base sm:text-lg md:text-xl text-balance">
+		{HERO_SECTION}
+	  </p>
+  
+	  <div class="flex  items-center justify-center">
+		<a href="https://www.linkedin.com/" target="_blank">
+		  <button class="minimal-button text-base sm:text-lg md:text-xl poppins px-6 py-3 rounded-full border border-primary text-primary dark:text-white hover:bg-primary hover:text-white dark:hover:bg-primary transition-all duration-300">
+			<h2 class="flex items-center">
+			  Get in touch
+			</h2>
+		  </button>
+		</a>
+	  </div>
+	  
+	</div>
+  
+	<div class="flex relative max-w-[700px] w-full mx-auto">
+
+	  <video
+		autoplay
+		muted
+		loop
+		playsinline
+		class="w-full h-auto object-cover rounded-md shadow-lg relative z-10"
+	  >
+		<source src={video} type="video/mp4" />
+		Your browser does not support the video tag.
+	  </video>
+	</div>
+  </section>
+  

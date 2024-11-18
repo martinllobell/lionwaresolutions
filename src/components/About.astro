@@ -1,0 +1,159 @@
+<section id="about" class="py-10 px-4 text-gray-800 dark:text-gray-100">
+  <div class="text-center mb-12">
+    <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold">
+      <span class="text-primary">About</span> Lionware
+    </h3>
+    <p class="text-lg sm:text-xl md:text-2xl mt-4">
+      Discover who we are and why we’re the best digital partner for your business.
+    </p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="max-w-6xl mx-auto">
+    <div class="flex justify-center mb-8">
+      <button class="tab-button active" data-tab="overview">Overview</button>
+      <button class="tab-button" data-tab="team">Our Team</button>
+      <button class="tab-button" data-tab="values">Our Vision</button>
+    </div>
+
+    <!-- Tab Content Wrapper -->
+    <div class="tab-content-wrapper" style="min-height: 500px;">
+      <div id="overview" class="tab-content active">
+        <div class="grid md:grid-cols-2 items-center gap-8">
+          <div>
+            <img
+              src="/lionware/career.webp"
+              alt="Lionware Overview"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary">We Are the IT Kings</h2>
+            <p class="text-lg mt-4">
+              Lionware Solutions is more than an IT consultancy. We lead the way in transforming businesses and expanding their online presence. Like the lion, we dominate the digital jungle with cutting-edge solutions tailored to make your business roar louder than the competition.
+            </p>
+            <a href="#contact" class="mt-6 inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary-dark transition">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="team" class="tab-content">
+        <div class="grid md:grid-cols-2 items-center gap-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary">Meet Our Team</h2>
+            <p class="text-lg mt-4">
+              Our team of experienced IT professionals is passionate about delivering innovative and high-quality solutions. With expertise across various industries, we work collaboratively to ensure every project is a success.
+            </p>
+            <a href="#contact" class="mt-6 inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary-dark transition">
+              Join Us
+            </a>
+          </div>
+          <div>
+            <img
+              src="/lionware/team.jpg"
+              alt="Lionware Team"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="values" class="tab-content">
+        <div class="grid md:grid-cols-2 items-center gap-8">
+          <div>
+            <img
+              src="/lionware/vision.jpg"
+              alt="Our Vision"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary">Our Vision</h2>
+            <p class="text-lg mt-4">
+              At Lionware, we strive to empower businesses to achieve digital excellence. Our vision is to create innovative IT solutions that help our clients grow and thrive in an ever-changing digital landscape.
+            </p>
+            <a href="#services" class="mt-6 inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary-dark transition">
+              Explore Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .tab-button {
+    flex: 1;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #4a5568;
+    border: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .tab-button:hover {
+    color: #58a6ff;
+  }
+
+  .tab-button.active {
+    color: #58a6ff;
+    border-bottom: 3px solid #58a6ff;
+  }
+
+  .tab-content-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px; /* Ajusta para mantener las pestañas uniformes */
+  }
+
+  .tab-content {
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    position: absolute;
+    width: 100%;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .tab-content.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".tab-button");
+    const contents = document.querySelectorAll(".tab-content");
+
+    let currentIndex = 0;
+
+    function showTab(index: number) {
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle("active", i === index);
+        contents[i].classList.toggle("active", i === index);
+      });
+    }
+
+    // Event listener for buttons
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        currentIndex = index;
+        showTab(index);
+      });
+    });
+
+    // Auto-switch tabs every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % buttons.length;
+      showTab(currentIndex);
+    }, 5000);
+  });
+</script>
